@@ -74,8 +74,10 @@ html, body {
   // This is the logo at the top of the ToC
   .logo {
     display: block;
-    max-width: 100%;
-    margin-bottom: $logo-margin;
+    margin-top: 40px;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 10px;
   }
 
   &>.search {
@@ -419,15 +421,12 @@ html, body {
     }
 
     tr:last-child {
-      border-bottom: 1px solid #ccc;
     }
 
     tr:nth-child(odd)>td {
-      background-color: lighten($main-bg,4.2%);
     }
 
     tr:nth-child(even)>td {
-      background-color: lighten($main-bg,2.4%);
     }
   }
 
@@ -612,4 +611,25 @@ html, body {
 
 .highlight, .highlight .w {
   background-color: $code-bg;
+}
+
+::-webkit-scrollbar
+{
+  width: 12px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.optional {
+  background: #f5f5f5;
+  border-left: 3px solid black;
 }
