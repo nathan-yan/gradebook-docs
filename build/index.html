@@ -1,0 +1,750 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;python&quot;,&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/gradebook.svg" class="logo" alt="Gradebook" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="python">python</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#initialization-and-caching" class="toc-h2 toc-link" data-title="Initialization and Caching">Initialization and Caching</a>
+                  </li>
+                  <li>
+                    <a href="#synergy-cookie-expiry" class="toc-h2 toc-link" data-title="Synergy Cookie Expiry">Synergy Cookie Expiry</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#api-keys-and-authentication-endpoints" class="toc-h1 toc-link" data-title="API Keys and Authentication Endpoints">API Keys and Authentication Endpoints</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#authenticate" class="toc-h2 toc-link" data-title="Authenticate">Authenticate</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#account" class="toc-h1 toc-link" data-title="Account">Account</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#account-resource" class="toc-h2 toc-link" data-title="Account Resource">Account Resource</a>
+                  </li>
+                  <li>
+                    <a href="#logout" class="toc-h2 toc-link" data-title="Logout">Logout</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#classes" class="toc-h1 toc-link" data-title="Classes">Classes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#assignment-resource" class="toc-h2 toc-link" data-title="Assignment Resource">Assignment Resource</a>
+                  </li>
+                  <li>
+                    <a href="#category-resource" class="toc-h2 toc-link" data-title="Category Resource">Category Resource</a>
+                  </li>
+                  <li>
+                    <a href="#class-resource" class="toc-h2 toc-link" data-title="Class Resource">Class Resource</a>
+                  </li>
+                  <li>
+                    <a href="#retreiving-your-classes" class="toc-h2 toc-link" data-title="Retreiving your classes">Retreiving your classes</a>
+                  </li>
+                  <li>
+                    <a href="#retreiving-a-specific-class" class="toc-h2 toc-link" data-title="Retreiving a Specific Class">Retreiving a Specific Class</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>This is the offical GradeBook API documentation. </p>
+
+<p>The documentation contains all endpoints used by Gradebook Web and Gradebook Mobile, and offers information about the structure and behavior of our application.</p>
+<h2 id='initialization-and-caching'>Initialization and Caching</h2>
+<p>When a user first creates an account with GradeBook, there is an initialization process, which scrapes their StudentVUE account for quarter and class links, and caches them in our database. This may take up to 30 seconds.</p>
+
+<p>This one-time delay is so that we can optimize the future query times of student grades.</p>
+<h2 id='synergy-cookie-expiry'>Synergy Cookie Expiry</h2>
+<p>Synergy cookies have an expiry time that is roughly 1-2 hours after being issued. Unfortunately, this is something GradeBook is unable to circumvent. This means that if you are using the API, you will have to prompt the user to reauthenticate when the user&#39;s session has expired.</p>
+<h1 id='api-keys-and-authentication-endpoints'>API Keys and Authentication Endpoints</h1>
+<p>To use the GradeBook API, you must have an API key, which you can create <a href="https://grades.newportml.com/get">here</a>. In addition to an API key, GradeBook needs the credentials of a student to actually login into Synergy servers. </p>
+
+<p><b>All requests</b> must have the API key in the request header under the name <code>gb-api-key</code>, and any requests other than the login request must have a set of cookies stored in the request header under the name <code>Cookie</code>. Login information will be sent as POST parameters.</p>
+<h2 id='authenticate'>Authenticate</h2>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">gradebook</span>
+
+<span class="n">gb</span> <span class="o">=</span> <span class="n">gradebook</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">,</span> <span class="s">'BSD_USERNAME'</span><span class="p">,</span> <span class="s">'BSD_PASSWORD'</span><span class="p">)</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">gradebook</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gradebook'</span><span class="p">);</span>
+
+<span class="nx">gb</span> <span class="o">=</span> <span class="nx">gradebook</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">,</span> <span class="s1">'BSD_USERNAME'</span><span class="p">,</span> <span class="s1">'BSD_PASSWORD'</span><span class="p">)</span>
+</code></pre>
+<p>This authenticates the user into the GradeBook API. The response of the API is a set of cookies that should be stored and kept securely in order to authenticate future requests to Synergy servers.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><span class = 'request'>
+  <span class = 'request-method'>POST</span><span class = 'request-endpoint'>https://grades.newportml.com/api/v1/authenticate</span>
+</span></p>
+<h3 id='fields'>Fields</h3>
+<table style = 'width: 50%'>
+    <tr style = 'font-weight: 700; width: 100%'>
+      <td style = 'text-align: right'>Fields</td><td style = 'width: 100%'>Description</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>username</code><br/><i>string</i>
+      </td>
+      <td>The users's BSD username</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>password</code><br/><i>string</i>
+      </td>
+      <td>The users's BSD password</td>
+    </tr>
+</table>
+
+<aside class="success">
+A 200 response will <b>always</b> mean a successful request
+</aside>
+<h1 id='account'>Account</h1><h2 id='account-resource'>Account Resource</h2>
+<blockquote>
+<p>The Account Resource in JSON:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s-washingtong"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"initialized"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"classLinks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"0"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"0"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"PXP_Gradebook.aspx?AGU=0&amp;..."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"PXP_Gradebook.aspx?AGU=0&amp;..."</span><span class="w">
+      </span><span class="err">.</span><span class="w">
+      </span><span class="err">.</span><span class="w">
+      </span><span class="err">.</span><span class="w">
+      </span><span class="s2">"6-8"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"PXP_Gradebook.aspx?AGU=0&amp;..."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="err">.</span><span class="w">
+    </span><span class="err">.</span><span class="w">
+    </span><span class="err">.</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"quarterLinks"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"PXP_Gradebook.aspx?AGU=0&amp;..."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"PXP_Gradebook.aspx?AGU=0&amp;..."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"PXP_Gradebook.aspx?AGU=0&amp;..."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"PXP_Gradebook.aspx?AGU=0&amp;..."</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://wa-bsd405-psv.edupoint.com/Photos/2A..."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"synergyCookies"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">BellevuePVUECookie</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2459457951.1.3283215712.1678802432</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">ASP.NET_SessionId</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">rlctltubfwze2da4m3qqxcvj</span><span class="se">\"</span><span class="s2">}"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>A user contains a variety of information. In particular, each user stores a set of cookies and links to other quarters and classes.</p>
+<h2 id='logout'>Logout</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">gradebook</span>
+
+<span class="n">gb</span> <span class="o">=</span> <span class="n">gradebook</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">,</span> <span class="s">'BSD_USERNAME'</span><span class="p">,</span> <span class="s">'BSD_PASSWORD'</span><span class="p">)</span>
+<span class="n">gb</span><span class="o">.</span><span class="n">logout</span><span class="p">()</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">gradebook</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gradebook'</span><span class="p">);</span>
+
+<span class="nx">gb</span> <span class="o">=</span> <span class="nx">gradebook</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">,</span> <span class="s1">'BSD_USERNAME'</span><span class="p">,</span> <span class="s1">'BSD_PASSWORD'</span><span class="p">)</span>
+<span class="nx">gb</span><span class="p">.</span><span class="nx">logout</span><span class="p">()</span>
+</code></pre>
+<blockquote>
+<p>The JSON response will be structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"you are"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"logged out! :)"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint logs the user out of the session the application is currently using. To log out of all sessions the user needs to visit <a href="https://grades.newportml.com/profile">https://grades.newportml.com/profile</a> and click on the <code>log out</code> button.</p>
+
+<p>The endpoint being <code>POST</code> is just a formality, and you do not need to supply any arguments.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><span class = 'request'>
+  <span class = 'request-method'>POST</span><span class = 'request-endpoint'>https://grades.newportml.com/api/v1/logout</span>
+</span></p>
+
+<aside class="success">
+A 200 response will <b>always</b> mean a successful request
+</aside>
+<h1 id='classes'>Classes</h1><h2 id='assignment-resource'>Assignment Resource</h2>
+<blockquote>
+<p>The Assignment Resource in JSON:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Group Quiz 3"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"category"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pointsEarned"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pointsTotal"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"comments"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Extra credit for showing me the other calculations."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"03/19/2002"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The assignment resource is not directly stored in the database, but is included in the class JSON response when querying the <a href="#class"><code>/class</code></a> endpoint.</p>
+<h3 id='fields-2'>Fields</h3>
+<table style = 'width: 50%'>
+    <tr style = 'font-weight: 700; width: 100%'>
+      <td style = 'text-align: right'>Fields</td><td style = 'width: 100%'>Description</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>name</code><br/><i>string</i>
+      </td>
+      <td>The name of the assignment.</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>category</code><br/><i>string</i>
+      </td>
+      <td>The category the assignment belongs to.</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>pointsTotal</code><br/><i>number</i>
+      </td>
+      <td>The total number of points possible for this assignment.</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>pointsEarned</code><br/><i>number</i>
+      </td>
+      <td>The number of points earned for this assignment.</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>comments</code><br/><i>string</i>
+      </td>
+      <td>Comments from the teacher for this assignment.</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>date</code><br/><i>string</i>
+      </td>
+      <td>The date that this assignment was added to the gradebook. This may not reflect the date the assignment was actually assigned or graded.</td>
+    </tr>
+</table>
+<h2 id='category-resource'>Category Resource</h2>
+<blockquote>
+<p>The Category Resource in JSON:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"Test"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"percentage"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The category resource is not directly stored in the database, but is included in the class JSON response when querying the <a href="#retreiving-a-specific-class"><code>/class</code></a> endpoint.</p>
+<h3 id='fields-3'>Fields</h3>
+<table style = 'width: 50%'>
+    <tr style = 'font-weight: 700; width: 100%'>
+      <td style = 'text-align: right'>Fields</td><td style = 'width: 100%'>Description</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>percentage</code><br/><i>number</i>
+      </td>
+      <td>The percentage of the total grade that category is worth.</td>
+    </tr>
+</table>
+<h2 id='class-resource'>Class Resource</h2>
+<blockquote>
+<p>The Class Resource in JSON:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAT10A"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"teacher"</span><span class="p">:</span><span class="w"> </span><span class="s2">"George Washington"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AP Calc AB"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"grade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"74.2%"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"period"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The class is the most basic component of the GradeBook responses. It contains on surface-level basic metadata, like grade percentage, class name, teacher, etc. </p>
+<h3 id='fields-4'>Fields</h3>
+<table style = 'width: 50%'>
+    <tr style = 'font-weight: 700; width: 100%'>
+      <td style = 'text-align: right'>Fields</td><td style = 'width: 100%'>Description</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>code</code><br/><i>string</i>
+      </td>
+      <td>The designation/identifier for a class</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>teacher</code><br/><i>string</i>
+      </td>
+      <td>The teacher for the particular class</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>class</code><br/><i>string</i>
+      </td>
+      <td>The name of the class</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>period</code><br/><i>string</i>
+      </td>
+      <td>The period of the class. The period type is a string because some classes span multiple periods, so their period names are strings, for example <code>5-7</code></td>
+    </tr>
+    <tr
+     style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>letter</code><br/><i>character</i>
+      </td>
+      <td>The current letter grade for the class</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>grade</code><br/><i>number</i>
+      </td>
+      <td>The current percentage grade for the class</td>
+    </tr>
+    <tr style = 'width: 100%' class = 'optional'>
+      <td style = 'text-align: right;'>
+        <code>categories</code><br/><i>array [category]</i>
+      </td>
+      <td>A list of assignment categories for that class. This field is only included when retreiving a specific class.</td>
+    </tr>
+    <tr style = 'width: 100%' class = 'optional'>
+      <td style = 'text-align: right;'>
+        <code>assignments</code><br/><i>array [assignment]</i>
+      </td>
+      <td>A list of assignments through time for that class. This field is only included when retreiving a specific class.</td>
+    </tr>
+</table>
+<h2 id='retreiving-your-classes'>Retreiving your classes</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">gradebook</span>
+
+<span class="n">gb</span> <span class="o">=</span> <span class="n">gradebook</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">,</span> <span class="s">'BSD_USERNAME'</span><span class="p">,</span> <span class="s">'BSD_PASSWORD'</span><span class="p">)</span>
+<span class="n">gb</span><span class="o">.</span><span class="n">classes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+  <span class="n">quarter</span> <span class="o">=</span> <span class="s">'current'</span>    <span class="c"># Can be 1, 2, 3, 4. If it's anything other than that, retreive the current quarter</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">gradebook</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gradebook'</span><span class="p">);</span>
+
+<span class="nx">gb</span> <span class="o">=</span> <span class="nx">gradebook</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">,</span> <span class="s1">'BSD_USERNAME'</span><span class="p">,</span> <span class="s1">'BSD_PASSWORD'</span><span class="p">)</span>
+<span class="nx">gb</span><span class="p">.</span><span class="nx">classes</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span>
+  <span class="s1">'current'</span>              <span class="c1">// Can be 1, 2, 3, 4. If it's anything other than that, retreive the current quarter</span>
+<span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The JSON response will be structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAT10A"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"teacher"</span><span class="p">:</span><span class="w"> </span><span class="s2">"George Washington"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AP Calc AB"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"grade"</span><span class="p">:</span><span class="w"> </span><span class="mf">74.2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LANG21B"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"teacher"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Benjamin Franklin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"class"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AP Language Arts"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"grade"</span><span class="p">:</span><span class="w"> </span><span class="mf">81.4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">.</span><span class="w">
+  </span><span class="err">.</span><span class="w">
+  </span><span class="err">.</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows you to see the metadata and grades for all classes a student has. Keep in mind that this will <strong>not</strong> return the individual assignment grades for each class, as visiting each class to see its grades is too expensive.</p>
+
+<p>To see individual assignment grades, see the <code>class</code> endpoint <a href="#retreiving-a-specific-class">here</a></p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><span class = 'request'>
+  <span class = 'request-method'>GET</span><span class = 'request-endpoint'>https://grades.newportml.com/api/v1/classes</span>
+</span></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table style = 'width: 50%'>
+    <tr style = 'font-weight: 700; width: 100%'>
+      <td style = 'text-align: right'>Parameter</td><td style = ''>Possible Values</td><td style = 'width: 100%'>Description</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>quarter</code><br/><i>number</i>
+      </td>
+      <td><code>1, 2, 3, 4, current</code><br/>Default: <code>current</code></td>
+      <td>The quarter from which to retreive your classes. A value of <code>current</code> will retreive classes from the current quarter</td>
+    </tr>
+
+</table>
+
+<aside class="success">
+A 200 response will <b>always</b> mean a successful request
+</aside>
+<h2 id='retreiving-a-specific-class'>Retreiving a Specific Class</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">gradebook</span>
+
+<span class="n">gb</span> <span class="o">=</span> <span class="n">gradebook</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s">'YOUR_API_KEY'</span><span class="p">,</span> <span class="s">'BSD_USERNAME'</span><span class="p">,</span> <span class="s">'BSD_PASSWORD'</span><span class="p">)</span>
+<span class="n">gb</span><span class="o">.</span><span class="n">classes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+  <span class="n">quarter</span> <span class="o">=</span> <span class="s">'current'</span><span class="p">,</span>    <span class="c"># Can be 1, 2, 3, 4. If it's anything other than that, retreive the current quarter</span>
+  <span class="n">period</span> <span class="o">=</span> <span class="s">'5-7'</span>          <span class="c"># Generally you'll get valid period names by calling the /classes endpoint first</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">gradebook</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gradebook'</span><span class="p">);</span>
+
+<span class="nx">gb</span> <span class="o">=</span> <span class="nx">gradebook</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">(</span><span class="s1">'YOUR_API_KEY'</span><span class="p">,</span> <span class="s1">'BSD_USERNAME'</span><span class="p">,</span> <span class="s1">'BSD_PASSWORD'</span><span class="p">)</span>
+<span class="nx">gb</span><span class="p">.</span><span class="nx">classes</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span>
+  <span class="s1">'current'</span><span class="p">,</span>              <span class="c1">// Can be 1, 2, 3, 4. If it's anything other than that, retreive the current quarter</span>
+  <span class="s1">'5-7'</span>                   <span class="c1">// Generally you'll get valid period names by calling the /classes endpoint first</span>
+<span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The JSON response will be structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"categories"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"Tests"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"percentage"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"Homework"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"percentage"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"In-Class Work"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"percentage"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w"> 
+  </span><span class="s2">"assignments"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Group Quiz 3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"category"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pointsEarned"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pointsTotal"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"comments"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Extra credit for showing me the other calculations."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"03/19/2002"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">.</span><span class="w">
+    </span><span class="err">.</span><span class="w">
+    </span><span class="err">.</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+  </span><span class="err">.</span><span class="w">
+  </span><span class="err">.</span><span class="w">
+  </span><span class="err">.</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows you to see assignments and categories of a specific class. The class is identified uniquely by the period number of that class. </p>
+
+<p>The assignments returned will be in reverse-chronological order, i.e. the most recent assignment will be the first element in the array.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><span class = 'request'>
+  <span class = 'request-method'>GET</span><span class = 'request-endpoint'>https://grades.newportml.com/api/v1/class/:class_period</span>
+</span></p>
+
+<p><code>:class_period</code> should be replaced by the period of the class.</p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table style = 'width: 50%'>
+    <tr style = 'font-weight: 700; width: 100%'>
+      <td style = 'text-align: right'>Parameter</td><td style = ''>Possible Values</td><td style = 'width: 100%'>Description</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>quarter</code><br/><i>number</i>
+      </td>
+      <td><code>1, 2, 3, 4, current</code><br/>Default: <code>current</code></td>
+      <td>The quarter from which to retreive your class. A value of <code>current</code> will retreive class information from the current quarter</td>
+    </tr>
+</table>
+
+<aside class="success">
+A 200 response will <b>always</b> mean a successful request
+</aside>
+<h1 id='errors'>Errors</h1>
+<aside class = 'notice'>
+If the response was unsuccessful, the response will have an extra field named <code>error_reason</code>, that is a human-parsable string that offers more granular insight as to what caused the error. The <code>error_reason</code>s are shown below each response code in the table below.
+</aside>
+
+<p>The GradeBook API uses the following error codes:</p>
+
+<table style = 'width: 50%'>
+    <tr style = 'font-weight: 700; width: 100%'>
+      <td style = 'text-align: right'>Error Code</td><td style = 'width: 100%'>Meaning</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>400</code><br/><i>INVALID_INPUT</i>
+      </td>
+      <td>Bad Request - Input is invalid</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>401</code><br/><i>INVALID_API_KEY</i>
+      </td>
+      <td>Unauthorized - API key is invalid</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>401</code><br/><i>INVALID_CREDENTIALS</i>
+      </td>
+      <td>Unauthorized - The login information for the user is not recognized by Synergy's servers.</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>401</code><br/><i>INVALID_COOKIES_GB</i>
+      </td>
+      <td>Unauthorized - The cookies to authenticate the user into GradeBook's servers were invalid</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>401</code><br/><i>INVALID_COOKIES_SYNERGY</i>
+      </td>
+      <td>Unauthorized - The cookies stored in GradeBook's database to authenticate into Synergy's servers were invalid. This is likely because they have expired.</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>403</code><br/><i>NO_ACCOUNT</i>
+      </td>
+      <td>Forbidden - Although the inputs were acceptable to the server, the user has not created an account on GradeBook.</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>404</code><br/><i>NOT_FOUND</i>
+      </td>
+      <td>Not Found - The requested resource was not found. Check your query parameters to ensure all arguments were within valid bounds.</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>405</code><br/><i>NOT_GET</i>
+      </td>
+      <td>Method Not Allowed - The endpoint uses the <code>GET</code> HTTP protocol.</td>
+    </tr>
+    <tr style = 'width: 100%'>
+      <td style = 'text-align: right;'>
+        <code>405</code><br/><i>NOT_POST</i>
+      </td>
+      <td>Method Not Allowed - The endpoint uses the <code>POST</code> HTTP protocol.</td>
+    </tr>
+</table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="python">python</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
